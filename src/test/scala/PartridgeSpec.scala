@@ -54,6 +54,20 @@ class PartridgeSpec extends WordSpec with MustMatchers {
 
     }
 
+    "london is called" must {
+
+      "return 'No, seriously, run. You will miss it.' if args do not match all expected stations" in {
+        Partridge.london(Array("London", "Norwich")) mustEqual "No, seriously, run. You will miss it."
+      }
+
+      "return 'Smell my cheese you mother!' if args contains all expected stations" in {
+        Partridge.london(Array("Norwich", "Tooting", "Bank",
+          "Rejection", "Disappointment", "Backstabbing Central",
+          "Exeter", "Shattered Dreams Parkway", "Belgium","London")) mustEqual "Smell my cheese you mother!"
+      }
+
+    }
+
   }
 
 }

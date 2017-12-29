@@ -25,5 +25,12 @@ object Partridge {
     if(num * num > 1000) hot else yorkie
   }
 
+  def london(args: Array[String]): String = {
+    val stations = Set("Rejection", "Disappointment", "Backstabbing Central", "Shattered Dreams Parkway")
+    val cheese = "Smell my cheese you mother!"
+    val run = "No, seriously, run. You will miss it."
+
+    if(stations.subsetOf(args.toSet)) cheese else run
+  }
 
 }
