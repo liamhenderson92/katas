@@ -1,4 +1,4 @@
-# kata-partridge-i
+# kata-partridge
 
 solution for codewars partridge themed katas:
 - [x] [partridge watch](https://www.codewars.com/kata/alan-partridge-i-partridge-watch)
