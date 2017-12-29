@@ -2,9 +2,9 @@ import org.scalatest.{MustMatchers, WordSpec}
 
 class PartridgeSpec extends WordSpec with MustMatchers {
 
-  "Partridge" must {
+  "Partridge" when {
 
-    "part is called" when {
+    "part is called" must {
 
       "return 'Lynn, I've pierced my foot on a spike!!' if empty args" in {
         Partridge.part(Array("")) mustEqual "Lynn, I've pierced my foot on a spike!!"
@@ -26,6 +26,30 @@ class PartridgeSpec extends WordSpec with MustMatchers {
 
       "return win phrase with eight exclamation points when given exact match for terms " in {
         Partridge.part(Array("PearTree","Chat","Dan","Toblerone","Lynn","AlphaPapa","Nomad","Partridge")) mustEqual "Mine's a Pint!!!!!!!!"
+      }
+
+    }
+
+    "apple is called" must {
+
+      "return 'Help yourself to a honeycomb Yorkie for the glovebox' when given value of 4" in {
+        Partridge.apple(4) mustEqual "Help yourself to a honeycomb Yorkie for the glovebox"
+      }
+
+      "return 'Help yourself to a honeycomb Yorkie for the glovebox' when given value of 1" in {
+        Partridge.apple(1) mustEqual "Help yourself to a honeycomb Yorkie for the glovebox"
+      }
+
+      "return 'Help yourself to a honeycomb Yorkie for the glovebox' when given value of 31" in {
+        Partridge.apple("31") mustEqual "Help yourself to a honeycomb Yorkie for the glovebox"
+      }
+
+      "return 'It's hotter than the sun!!' when given value of '32'" in {
+        Partridge.apple("32") mustEqual "It's hotter than the sun!!"
+      }
+
+      "return 'It's hotter than the sun!!' when given value of '50'" in {
+        Partridge.apple("50") mustEqual "It's hotter than the sun!!"
       }
 
     }
